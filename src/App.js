@@ -5,7 +5,7 @@ import Header from './components/header/Header'
 import Sidebar from './components/sidebar/Sidebar'
 import HomeScreen from './screens/homeScreen/HomeScreen'
 
-import "./screens/_app.scss"
+import "./_app.scss"
 
 function
 App() {
