@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap'
 import Header from './components/header/Header'
 import Sidebar from './components/sidebar/Sidebar'
 import HomeScreen from './screens/homeScreen/HomeScreen'
+import LoginScreen from './screens/loginScreen/LoginScreen'
 
 import "./_app.scss"
 
@@ -13,18 +14,19 @@ App() {
     const handleToggleSidebar = () => toggleSidebar(value => !value)
 
   return (
-    <>
-      <Header handleToggleSidebar={handleToggleSidebar} />
-      <div className="app_container border border-info">
-        <Sidebar
-            sidebar={sidebar}
-            handleToggleSidebar={handleToggleSidebar}
-        />
-        <Container className='app_main border border-warning'>
-          <HomeScreen />
-        </Container>
-      </div>
-    </>
+    // <>
+    //   <Header handleToggleSidebar={handleToggleSidebar} />
+    //   <div className="app_container border border-info">
+    //     <Sidebar
+    //         sidebar={sidebar}
+    //         handleToggleSidebar={handleToggleSidebar}
+    //     />
+    //     <Container className='app_main border border-warning'>
+    //       <HomeScreen />
+    //     </Container>
+    //   </div>
+    // </>
+    <LoginScreen />
   )
 
 }
