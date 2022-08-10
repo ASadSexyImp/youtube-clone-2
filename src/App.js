@@ -6,27 +6,77 @@ import Sidebar from './components/sidebar/Sidebar'
 import HomeScreen from './screens/homeScreen/HomeScreen'
 import LoginScreen from './screens/loginScreen/LoginScreen'
 
+import {  BrowserRouter as Router, Routes, Route, useRoutes, useNavigate, Navigate } from 'react-router-dom'
+
 import "./_app.scss"
 
-function
-App() {
+const Layout = ({ children }) => {
     const [sidebar, toggleSidebar] = useState(false)
     const handleToggleSidebar = () => toggleSidebar(value => !value)
 
+    return (
+       <>
+          <Header handleToggleSidebar={handleToggleSidebar} />
+          <div className='app_container'>
+             <Sidebar
+                sidebar={sidebar}
+                handleToggleSidebar={handleToggleSidebar}
+             />
+             <Container fluid className='app_main '>
+                {children}
+             </Container>
+          </div>
+       </>
+    )
+}
+
+const App = () => {
+
   return (
-    // <>
-    //   <Header handleToggleSidebar={handleToggleSidebar} />
-    //   <div className="app_container border border-info">
-    //     <Sidebar
-    //         sidebar={sidebar}
-    //         handleToggleSidebar={handleToggleSidebar}
-    //     />
-    //     <Container className='app_main border border-warning'>
-    //       <HomeScreen />
-    //     </Container>
-    //   </div>
-    // </>
-    <LoginScreen />
+    <Routes>
+        <Route
+            path='/'
+            exact
+            element={
+                <Layout>
+                    <HomeScreen />
+                </Layout>
+            }
+        />
+        <Route path='/auth' element={<LoginScreen />} />
+
+
+        {/* <Route path='/search/:query'>
+            <Layout>
+                <h1>search result</h1>
+                <SearchScreen />
+            </Layout>
+        </Route> */}
+        {/* <Route path='/watch/:id'>
+            <Layout>
+                <h1>watch result</h1>
+                <WatchScreen />
+            </Layout>
+        </Route>
+
+        <Route path='/feed/subscriptions'>
+            <Layout>
+                <h1>subscriptions result</h1>
+                <SubscriptionsScreen />
+            </Layout>
+        </Route>
+        <Route path='/channel/:channelId'>
+            <Layout>
+                <h1>channel result</h1>
+                <ChannelScreen />
+            </Layout>
+        </Route>
+
+        <Route>
+            <Navigate to='/' />
+        </Route> */}
+    </Routes>
+
   )
 
 }
