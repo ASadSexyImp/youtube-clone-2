@@ -33,50 +33,55 @@ const Layout = ({ children }) => {
 const App = () => {
 
   return (
-    <Routes>
-        <Route
-            path='/'
-            exact
-            element={
+    <Router>
+        <Routes>
+            <Route
+                path='/'
+                exact
+                element={
+                    <Layout>
+                        <HomeScreen />
+                    </Layout>
+                }
+            />
+            <Route path='/auth' element={<LoginScreen />} />
+
+
+            <Route
+                path='/search/:query'
+                element={
+                    <Layout>
+                        <h1>search result</h1>
+                    {/* <SearchScreen /> */}
+                    </Layout>
+                }
+            />
+
+            {/* <Route path='/watch/:id'>
                 <Layout>
-                    <HomeScreen />
+                    <h1>watch result</h1>
+                    <WatchScreen />
                 </Layout>
-            }
-        />
-        <Route path='/auth' element={<LoginScreen />} />
+            </Route>
 
-
-        {/* <Route path='/search/:query'>
-            <Layout>
-                <h1>search result</h1>
-                <SearchScreen />
-            </Layout>
-        </Route> */}
-        {/* <Route path='/watch/:id'>
-            <Layout>
-                <h1>watch result</h1>
-                <WatchScreen />
-            </Layout>
-        </Route>
-
-        <Route path='/feed/subscriptions'>
-            <Layout>
-                <h1>subscriptions result</h1>
-                <SubscriptionsScreen />
-            </Layout>
-        </Route>
-        <Route path='/channel/:channelId'>
-            <Layout>
-                <h1>channel result</h1>
-                <ChannelScreen />
-            </Layout>
-        </Route>
-
-        <Route>
-            <Navigate to='/' />
-        </Route> */}
-    </Routes>
-
+            <Route path='/feed/subscriptions'>
+                <Layout>
+                    <h1>subscriptions result</h1>
+                    <SubscriptionsScreen />
+                </Layout>
+            </Route>
+            <Route path='/channel/:channelId'>
+                <Layout>
+                    <h1>channel result</h1>
+                    <ChannelScreen />
+                </Layout>
+            </Route> */}
+{/* 
+            <Route>
+                <Navigate to='/' />
+            </Route> */}
+        </Routes>
+    </Router>
   )
 
 }
