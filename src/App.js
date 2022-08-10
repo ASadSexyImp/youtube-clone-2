@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState }  from 'react'
 import { Container } from 'react-bootstrap'
 
 import Header from './components/header/Header'
@@ -9,11 +9,17 @@ import "./_app.scss"
 
 function
 App() {
+    const [sidebar, toggleSidebar] = useState(false)
+    const handleToggleSidebar = () => toggleSidebar(value => !value)
+
   return (
     <>
-      <Header />
+      <Header handleToggleSidebar={handleToggleSidebar} />
       <div className="app_container border border-info">
-        <Sidebar />
+        <Sidebar
+            sidebar={sidebar}
+            handleToggleSidebar={handleToggleSidebar}
+        />
         <Container className='app_main border border-warning'>
           <HomeScreen />
         </Container>
