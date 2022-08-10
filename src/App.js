@@ -1,11 +1,24 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
 
-function 
+import Header from './components/header/Header'
+import Sidebar from './components/sidebar/Sidebar'
+import HomeScreen from './screens/homeScreen/HomeScreen'
+
+import "./screens/_app.scss"
+
+function
 App() {
   return (
-    <div>
-      not youtube
-    </div>
+    <>
+      <Header />
+      <div className="app_container border border-info">
+        <Sidebar />
+        <Container className='app_main border border-warning'>
+          <HomeScreen />
+        </Container>
+      </div>
+    </>
   )
 
 }
