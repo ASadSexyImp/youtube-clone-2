@@ -9,6 +9,7 @@ import LoginScreen from './screens/loginScreen/LoginScreen'
 import {  BrowserRouter as Router, Routes, Route, useRoutes, useNavigate, Navigate } from 'react-router-dom'
 
 import "./_app.scss"
+import { useSelector } from 'react-redux'
 
 const Layout = ({ children }) => {
     const [sidebar, toggleSidebar] = useState(false)
@@ -32,8 +33,18 @@ const Layout = ({ children }) => {
 
 const App = () => {
 
+    const { accessToken, loading } = useSelector(state => state.auth)
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+       if (!loading && !accessToken) {
+          navigate('/auth')
+       }
+    }, [accessToken, loading, navigate])
+
   return (
-    <Router>
+    
         <Routes>
             <Route
                 path='/'
@@ -81,7 +92,6 @@ const App = () => {
                 <Navigate to='/' />
             </Route> */}
         </Routes>
-    </Router>
   )
 
 }
