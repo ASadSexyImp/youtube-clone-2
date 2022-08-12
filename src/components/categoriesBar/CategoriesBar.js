@@ -31,14 +31,14 @@ const CategoriesBar = () => {
       const dispatch = useDispatch()
       const handleClick = value => {
          setActiveElement(value)
-         // if (value === 'All') {
-         //    dispatch(getPopularVideos())
-         // } else {
+         if (value === 'All') {
+            dispatch(getPopularVideos())
+         } else {
             dispatch(getVideosByCategory(value))
-         // }
+         }
       }
 
-  return (
+   return (
       <div className='categoriesBar'>
          {keywords.map((value, i) => (
             <span
@@ -49,7 +49,7 @@ const CategoriesBar = () => {
             </span>
          ))}
       </div>
-  )
+   )
 }
 
 export default CategoriesBar

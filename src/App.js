@@ -5,6 +5,7 @@ import Header from './components/header/Header'
 import Sidebar from './components/sidebar/Sidebar'
 import HomeScreen from './screens/homeScreen/HomeScreen'
 import LoginScreen from './screens/loginScreen/LoginScreen'
+import WatchScreen from './screens/watchScreen/WathcScreen'
 
 import {  BrowserRouter as Router, Routes, Route, useRoutes, useNavigate, Navigate } from 'react-router-dom'
 
@@ -16,18 +17,18 @@ const Layout = ({ children }) => {
     const handleToggleSidebar = () => toggleSidebar(value => !value)
 
     return (
-       <>
-          <Header handleToggleSidebar={handleToggleSidebar} />
-          <div className='app_container'>
-             <Sidebar
-                sidebar={sidebar}
-                handleToggleSidebar={handleToggleSidebar}
-             />
-             <Container fluid className='app_main '>
-                {children}
-             </Container>
-          </div>
-       </>
+        <>
+            <Header handleToggleSidebar={handleToggleSidebar} />
+            <div className='app_container'>
+                <Sidebar
+                    sidebar={sidebar}
+                    handleToggleSidebar={handleToggleSidebar}
+                />
+                <Container fluid className='app_main '>
+                    {children}
+                </Container>
+            </div>
+        </>
     )
 }
 
@@ -38,13 +39,12 @@ const App = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-       if (!loading && !accessToken) {
-          navigate('/auth')
-       }
+        if (!loading && !accessToken) {
+            navigate('/auth')
+        }
     }, [accessToken, loading, navigate])
 
-  return (
-    
+    return (
         <Routes>
             <Route
                 path='/'
@@ -68,14 +68,18 @@ const App = () => {
                 }
             />
 
-            {/* <Route path='/watch/:id'>
-                <Layout>
-                    <h1>watch result</h1>
-                    <WatchScreen />
-                </Layout>
-            </Route>
+            <Route
+                path='/watch/:id'
+                element={
+                    <Layout>
+                        <h1>watch result</h1>
+                        <WatchScreen />
+                    </Layout>
+                }
+            />
 
-            <Route path='/feed/subscriptions'>
+
+            {/* <Route path='/feed/subscriptions'>
                 <Layout>
                     <h1>subscriptions result</h1>
                     <SubscriptionsScreen />
@@ -92,7 +96,7 @@ const App = () => {
                 <Navigate to='/' />
             </Route> */}
         </Routes>
-  )
+    )
 
 }
 
