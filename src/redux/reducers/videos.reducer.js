@@ -91,134 +91,134 @@ export const selectedVideoReducer = (
     }
 }
 
-// export const relatedVideoReducer = (
-//     state = {
-//         loading: true,
-//         videos: [],
-//     },
-//     action
-// ) => {
-//     const { payload, type } = action
+export const relatedVideoReducer = (
+    state = {
+        loading: true,
+        videos: [],
+    },
+    action
+) => {
+    const { payload, type } = action
 
-//     switch (type) {
-//         case RELATED_VIDEO_REQUEST:
-//             return {
-//                 ...state,
-//                 loading: true,
-//             }
-//         case RELATED_VIDEO_SUCCESS:
-//             return {
-//                 ...state,
-//                 videos: payload,
-//                 loading: false,
-//             }
-//         case RELATED_VIDEO_FAIL:
-//             return {
-//                 ...state,
-//                 loading: false,
-//                 error: payload,
-//             }
+    switch (type) {
+        case RELATED_VIDEO_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            }
+        case RELATED_VIDEO_SUCCESS:
+            return {
+                ...state,
+                videos: payload,
+                loading: false,
+            }
+        case RELATED_VIDEO_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: payload,
+            }
 
-//         default:
-//             return state
-//     }
-// }
+        default:
+            return state
+    }
+}
 
-// export const searchedVideosReducer = (
-//     state = {
-//         loading: true,
-//         videos: [],
-//     },
-//     action
-// ) => {
-//     const { payload, type } = action
+export const searchedVideosReducer = (
+    state = {
+        loading: true,
+        videos: [],
+    },
+    action
+) => {
+    const { payload, type } = action
 
-//     switch (type) {
-//         case SEARCHED_VIDEO_REQUEST:
-//             return {
-//                 ...state,
-//                 loading: true,
-//             }
-//         case SEARCHED_VIDEO_SUCCESS:
-//             return {
-//                 ...state,
-//                 videos: payload,
-//                 loading: false,
-//             }
-//         case SEARCHED_VIDEO_FAIL:
-//             return {
-//                 ...state,
-//                 loading: false,
-//                 error: payload,
-//             }
+    switch (type) {
+        case SEARCHED_VIDEO_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            }
+        case SEARCHED_VIDEO_SUCCESS:
+            return {
+                ...state,
+                videos: payload,
+                loading: false,
+            }
+        case SEARCHED_VIDEO_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: payload,
+            }
 
-//         default:
-//             return state
-//     }
-// }
+        default:
+            return state
+    }
+}
 
-// export const subscriptionsChannelReducer = (
-//     state = {
-//         loading: true,
-//         videos: [],
-//     },
-//     action
-// ) => {
-//     const { payload, type } = action
+export const subscriptionsChannelReducer = (
+    state = {
+        loading: true,
+        videos: [],
+    },
+    action
+) => {
+    const { payload, type } = action
 
-//     switch (type) {
-//         case SUBSCRIPTIONS_CHANNEL_REQUEST:
-//             return {
-//                 ...state,
-//                 loading: true,
-//             }
-//         case SUBSCRIPTIONS_CHANNEL_SUCCESS:
-//             return {
-//                 ...state,
-//                 videos: payload,
-//                 loading: false,
-//             }
-//         case SUBSCRIPTIONS_CHANNEL_FAIL:
-//             return {
-//                 ...state,
-//                 loading: false,
-//                 error: payload,
-//             }
+    switch (type) {
+        case SUBSCRIPTIONS_CHANNEL_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            }
+        case SUBSCRIPTIONS_CHANNEL_SUCCESS:
+            return {
+                ...state,
+                videos: payload,
+                loading: false,
+            }
+        case SUBSCRIPTIONS_CHANNEL_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: payload,
+            }
 
-//         default:
-//             return state
-//     }
-// }
+        default:
+            return state
+    }
+}
 
-// export const channelVideosReducer = (
-//     state = {
-//         loading: true,
-//         videos: [],
-//     },
-//     action
-// ) => {
-//     const { payload, type } = action
+export const channelVideosReducer = (
+    state = {
+        loading: true,
+        videos: [],
+    },
+    action
+) => {
+    const { payload, type } = action
 
-//     switch (type) {
-//         case CHANNEL_VIDEOS_REQUEST:
-//             return {
-//                 ...state,
-//                 loading: true,
-//             }
-//         case CHANNEL_VIDEOS_SUCCESS:
-//             return {
-//                 ...state,
-//                 videos: payload,
-//                 loading: false,
-//             }
-//         case CHANNEL_VIDEOS_FAIL:
-//             return {
-//                 ...state,
-//                 loading: false,
-//                 error: payload,
-//             }
+    switch (type) {
+        case CHANNEL_VIDEOS_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            }
+        case CHANNEL_VIDEOS_SUCCESS:
+            return {
+                ...state,
+                videos: payload,
+                loading: false,
+            }
+        case CHANNEL_VIDEOS_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: payload,
+            }
 
-//         default:
-//             return state
-//     }
-// }
+        default:
+            return state
+    }
+}

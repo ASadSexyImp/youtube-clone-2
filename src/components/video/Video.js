@@ -7,7 +7,7 @@ import request from '../../api'
 import moment from 'moment'
 import numeral from 'numeral'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-// import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Video = ({video}) => {
     const {
@@ -32,7 +32,7 @@ const Video = ({video}) => {
     // const _videoId = id?.videoId || contentDetails?.videoId || id
     const _videoId = id?.videoId || id
 
-    // const history = useHistory()
+    const navigate = useNavigate()
 
     useEffect(() => {
         const get_video_details = async () => {
@@ -66,11 +66,12 @@ const Video = ({video}) => {
         get_channel_icon()
     }, [channelId])
 
+    const handleVideoClick = () => {
+        navigate(`/watch/${_videoId}`)
+    }
 
     return (
-        <div className='video'
-        // onClick={handleVideoClick}
-        >
+        <div className='video'onClick={handleVideoClick}>
             <div className='video_top'>
                 <LazyLoadImage src={medium.url} effect='blur' />
                 <span className='video_top_duration'>{_duration}</span>
