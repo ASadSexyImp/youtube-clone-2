@@ -71,3 +71,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 deploy website https://clone-fef73.web.app/
 https://console.cloud.google.com/apis/credentials
+tutorial resource https://youtu.be/Mos5QJAje28
