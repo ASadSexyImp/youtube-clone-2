@@ -5,12 +5,14 @@ import Header from './components/header/Header'
 import Sidebar from './components/sidebar/Sidebar'
 import HomeScreen from './screens/homeScreen/HomeScreen'
 import LoginScreen from './screens/loginScreen/LoginScreen'
-import WatchScreen from './screens/watchScreen/WathcScreen'
+import WatchScreen from './screens/watchScreen/WatchScreen'
+import SubscriptionsScreen from './screens/subscriptionsScreen/SubscriptionsScreen'
 
 import {  BrowserRouter as Router, Routes, Route, useRoutes, useNavigate, Navigate } from 'react-router-dom'
 
 import "./_app.scss"
 import { useSelector } from 'react-redux'
+import SearchScreen from './screens/SearchScreen'
 
 const Layout = ({ children }) => {
     const [sidebar, toggleSidebar] = useState(false)
@@ -62,8 +64,7 @@ const App = () => {
                 path='/search/:query'
                 element={
                     <Layout>
-                        <h1>search result</h1>
-                    {/* <SearchScreen /> */}
+                        <SearchScreen />
                     </Layout>
                 }
             />
@@ -72,8 +73,17 @@ const App = () => {
                 path='/watch/:id'
                 element={
                     <Layout>
-                        <h1>watch result</h1>
                         <WatchScreen />
+                    </Layout>
+                }
+            />
+
+            <Route
+                path='/feed/subscriptions'
+                element={
+                    <Layout>
+                        <h1>subscriptions result</h1>
+                        <SubscriptionsScreen />
                     </Layout>
                 }
             />

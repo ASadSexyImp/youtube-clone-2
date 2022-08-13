@@ -6,10 +6,10 @@ import thunk from 'redux-thunk'
 import { authReducer } from './reducers/auth.reducer'
 import {
     homeVideosReducer,
-    // relatedVideoReducer,
-    // searchedVideosReducer,
-    // subscriptionsChannelReducer,
-    // channelVideosReducer,
+    relatedVideoReducer,
+    searchedVideosReducer,
+    subscriptionsChannelReducer,
+    channelVideosReducer,
 } from './reducers/videos.reducer'
 import { selectedVideoReducer } from './reducers/videos.reducer'
 import { channelDetailsReducer } from './reducers/channel.reducer'
@@ -21,11 +21,11 @@ const rootReducer = combineReducers({
     selectedVideo: selectedVideoReducer,
     channelDetails: channelDetailsReducer,
     commentList: commentListReducer,
-    // relatedVideos: relatedVideoReducer,
-    // searchedVideos: searchedVideosReducer,
-    // subscriptionsChannel: subscriptionsChannelReducer,
+    relatedVideos: relatedVideoReducer,
+    searchedVideos: searchedVideosReducer,
+    subscriptionsChannel: subscriptionsChannelReducer,
 
-    // channelVideos: channelVideosReducer,
+    channelVideos: channelVideosReducer,
 })
 
 const reducer = initialState => initialState
